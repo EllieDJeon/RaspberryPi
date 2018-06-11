@@ -1,6 +1,6 @@
 # **RaspberryPi** 
 
-Sending the sensor data from RaspberryPi to AWS  
+Sending the sensor data from __RaspberryPi__ to __AWS__  
 
 ## **Table of Contents** 
 
@@ -13,7 +13,7 @@ Sending the sensor data from RaspberryPi to AWS
 
 ## 1. Introduction
 
-The original BasicPubSub.py that you can utilize with RaspberryPi shows a output of “Hello, world!” message. We updated it to show the outputs of accelerometer, gyroscope, magnetometer, airpressure, temperature, and humidity.
+The original _BasicPubSub.py_ that you can utilize with RaspberryPi shows a output of “Hello, world!” message. We updated it to show the outputs of _accelerometer, gyroscope, magnetometer, airpressure, temperature,_ and _humidity._
 
 
 ## 2. Module and Function   
@@ -40,7 +40,7 @@ parser.add_argument('-H','--humidity', action='store_true', default=False)
 
   
 ### 2-2. `SenseHat`
-The SenseHat controls the RaspberryPi Senses. In our case, we added to detect the seneses of accelerometer, gyroscope, magnetometer, airpressure, temperature, and humidity.
+The SenseHat controls the RaspberryPi Senses. In our case, we added to detect the seneses of _accelerometer, gyroscope, magnetometer, airpressure, temperature,_ and _humidity._
  
 
 | Sensor | Code | Unit |
@@ -59,6 +59,7 @@ For the test code-examples, `SenseHat` and `time` modules are used. `time` modul
 
 ```ruby
 from sense_hat import SenseHat
+import time
 
 sense = SenseHat()
 sense.clear()
