@@ -8,11 +8,12 @@ Setting RaspberryPi with AWS
 2. Modules
    - argparse 
    - SenseHat
-3. Publish
+3. Implementation
 
 ## 1. Introduction
 
-The original BasicPubSub.py that you can utilize with RaspberryPi shows a output of “Hello, world!” message. We updated it to show the outputs of accelerometer, gyroscope, magnetometer, airpressure, temperature, and humidity.    
+The original BasicPubSub.py that you can utilize with RaspberryPi shows a output of “Hello, world!” message. We updated it to show the outputs of accelerometer, gyroscope, magnetometer, airpressure, temperature, and humidity.
+
 ## 2. Module and Function   
 ### 2-1. argparse
 you can use this module to wrtie user-friendly command-line interfaces. In our case, we can translate the outputs that RaspberryPi generates into user-friendly command-line interfaces.
@@ -46,9 +47,9 @@ The SenseHat controls the RaspberryPi Senses. In our case, we added to detect th
 | Gyroscope (Pitch, Roll, Yaw) | `get_orientation()`| °/s       |
 | Accelerometer (ax, ay, az) | `get_accelerometer_raw()` | m/s^2       |
 | Magnetometer (mx, my, mz) | `get_compass_raw()` | ---       |
-| Pressure | `get_pressure()` | ---       |
-| Temperature | `get_temperature()` | ---       |
-| Humidity | `get_humidity()` | ---       |
+| Pressure | `get_pressure()` | hPa       |
+| Temperature | `get_temperature()` | °C       |
+| Humidity | `get_humidity()` | %       |
 
 
 ### Functions Discriptions  
@@ -114,6 +115,7 @@ humidity = sense.get_humidity()
 ```
 
 ## 3. Implementation
+### 3.1 Dumping to a JSON file 
 Assign the saved sensor data to the `message` dictionary and publish to the topic in a while-loop. 
 
 ```ruby
@@ -136,10 +138,18 @@ while True:
         message['pressure'] = pressure
         message['temperature'] = temp
         message['humidity'] = humidity
+        
+        message['message'] = 'SENSOR DETECTED'
          
         messageJson = json.dumps(message)
         myAWSIoTMQTTClient.publish(topic, messageJson, 1)
         if args.mode == 'publish':
             print('Published topic %s: %s\n' % (topic, messageJson))
 ```
+
+## 3.2 Commanding the file
+To run this python file, 
+
+> python <your_file_name> -e <endpoint>  -r <rootCA> -c <certificate_key> - k private_key
+
 
