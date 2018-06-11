@@ -37,7 +37,7 @@ root-CA.pem
 
 
 __to the above directory:__  
-$ cp <cert location> aws-iot-device-sdk-python/samples/basicPubSub  
+$ cp  <cert location>  aws-iot-device-sdk-python/samples/basicPubSub  
 $ cp <priv key location> aws-iot-device-sdk-python/samples/basicPubSub  
 $ cp <root CA location> aws-iot-device-sdk-python/samples/basicPubSub  
 
