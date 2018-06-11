@@ -30,13 +30,13 @@ $ sudo python setup.py install )
 $ aws-iot-device-sdk-python/samples/basicPubSub  
 
 
-Copy the following files:  
+__Copy the following files:__  
 xxxxxxxxxx-certificate.pem.crt  
 xxxxxxxxxx-private.pem.key  
 root-CA.pem  
 
 
-to the above directory:  
+__to the above directory:__  
 $ cp <cert location> aws-iot-device-sdk-python/samples/basicPubSub  
 $ cp <priv key location> aws-iot-device-sdk-python/samples/basicPubSub  
 $ cp <root CA location> aws-iot-device-sdk-python/samples/basicPubSub  
