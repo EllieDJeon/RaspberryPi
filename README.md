@@ -1,8 +1,8 @@
-# RaspberryPi 
+# **RaspberryPi** 
 
-Setting RaspberryPi with AWS 
+Sending the sensor data from RaspberryPi to AWS 
 
-## Table of Contents 
+## **Table of Contents** 
 
 1. Introduction
 2. Modules
@@ -15,7 +15,7 @@ Setting RaspberryPi with AWS
 The original BasicPubSub.py that you can utilize with RaspberryPi shows a output of “Hello, world!” message. We updated it to show the outputs of accelerometer, gyroscope, magnetometer, airpressure, temperature, and humidity.
 
 ## 2. Module and Function   
-### 2-1. argparse
+### 2-1. `argparse`
 you can use this module to wrtie user-friendly command-line interfaces. In our case, we can translate the outputs that RaspberryPi generates into user-friendly command-line interfaces.
 
 ### 2-1-0. Prerequisites
@@ -37,7 +37,7 @@ parser.add_argument('-H','--humidity', action='store_true', default=False)
 ```
 
   
-### 2-2. SenseHat
+### 2-2. `SenseHat`
 The SenseHat controls the RaspberryPi Senses. In our case, we added to detect the seneses of accelerometer, gyroscope, magnetometer, airpressure, temperature, and humidity.
 
 ### Functions on SenseHat  
@@ -46,7 +46,7 @@ The SenseHat controls the RaspberryPi Senses. In our case, we added to detect th
 | ---      | ---       | ---       |
 | Gyroscope (Pitch, Roll, Yaw) | `get_orientation()`| °/s       |
 | Accelerometer (ax, ay, az) | `get_accelerometer_raw()` | m/s^2       |
-| Magnetometer (mx, my, mz) | `get_compass_raw()` | ---       |
+| Magnetometer (mx, my, mz) | `get_compass_raw()` | microtesla (µT)       |
 | Pressure | `get_pressure()` | hPa       |
 | Temperature | `get_temperature()` | °C       |
 | Humidity | `get_humidity()` | %       |
@@ -115,7 +115,7 @@ humidity = sense.get_humidity()
 ```
 
 ## 3. Implementation
-### 3.1 Dumping to a JSON file 
+### 3.1 Dumping to a **JSON file** 
 Assign the saved sensor data to the `message` dictionary and publish to the topic in a while-loop. 
 
 ```ruby
