@@ -24,7 +24,7 @@ $ git clone https://github.com/aws/aws-iot-device-sdk-python.git
 $ cd aws-iot-device-sdk-python  
 $ python setup.py install
 ```
-(Note: You may receive errors about not having permissions to install the SDK. If that is the case, run the command as root:  
+Note: You may receive errors about not having permissions to install the SDK. If that is the case, run the command as root:  
 ```
 $ sudo chown -R $USER /usr/local/lib/python2.7
 $ sudo python setup.py install 
