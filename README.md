@@ -19,28 +19,35 @@ The original[ _BasicPubSub.py_](https://github.com/aws/aws-iot-device-sdk-python
 ## 2. Installation
 
 ### 2-1. Download the file
+```
 $ git clone https://github.com/aws/aws-iot-device-sdk-python.git  
 $ cd aws-iot-device-sdk-python  
-$ python setup.py install  
+$ python setup.py install
+```
 (Note: You may receive errors about not having permissions to install the SDK. If that is the case, run the command as root:  
-$ sudo python setup.py install )  
-
+```
+$ sudo chown -R $USER /usr/local/lib/python2.7
+$ sudo python setup.py install 
+```
 
 ### 2-2. Copy Your Certs and Key File to PubSub Directory.  
-$ aws-iot-device-sdk-python/samples/basicPubSub  
-
+```
+$ aws-iot-device-sdk-python/samples/basicPubSub
+```
 
 __Copy the following files:__  
+```
 xxxxxxxxxx-certificate.pem.crt  
 xxxxxxxxxx-private.pem.key  
 root-CA.pem  
-
+```  
 
 __to the above directory:__  
-$ cp [cert location] aws-iot-device-sdk-python/samples/basicPubSub  
+```
+$ cp <cert location> aws-iot-device-sdk-python/samples/basicPubSub  
 $ cp <priv key location> aws-iot-device-sdk-python/samples/basicPubSub  
 $ cp <root CA location> aws-iot-device-sdk-python/samples/basicPubSub  
-
+```  
 
 ### 2-3 Command the file
 
