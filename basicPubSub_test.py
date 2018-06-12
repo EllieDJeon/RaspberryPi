@@ -69,7 +69,7 @@ gyroscopeOn = args.gyroscopeOn
 magnetometerOn = args.magnetometerOn
 
 
-if accelerometerOn
+#if accelerometerOn: 
 
 if args.mode not in AllowedActions:
     parser.error("Unknown --mode option %s. Must be one of %s" % (args.mode, str(AllowedActions)))
