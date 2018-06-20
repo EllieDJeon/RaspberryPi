@@ -53,7 +53,19 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
   ```  
   
   Run `cgps` to test.  
-  
+
+
+
+## 3. Python Code  
+```  
+sudo pip3 install gps3  
+sudo apt-get install python3-microstacknode  
+sudo apt-get install python3-serial  
+```  
+
+
  
 References:  
 http://www.intellamech.com/RaspberryPi-projects/rpi3_gps.html#_gps_using_usb_to_tll  
+
+
