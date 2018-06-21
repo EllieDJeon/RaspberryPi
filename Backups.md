@@ -19,6 +19,9 @@ We can simply backup the SD card from your Raspberry Pi. __'Win32DiskImager'__ i
 Once the program is ready, simply follow a step-by-step guide shown below.  
 <br>
 
+
+![](C:\RasberryPi_CarVi\githubIMG\bup_1.png)
+
 ### 2-2. Backup Raspberry Pi  
 To backup your Raspberry Pi, you need __the SD card from the Raspberry Pi__ and the __Windows computer with a SD card reader__.  
 
