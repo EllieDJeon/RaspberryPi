@@ -1,4 +1,5 @@
 # Backup Raspberry Pi
+---  
 ## 1. Home folder  
 You can keep _RPi home folder_ by using the following command. This creates a tar archive and you keep a copy of it on our home PC or in cloud storage. The following commands will create `pi_home.tar.gz` in `/home/`.
 ```
