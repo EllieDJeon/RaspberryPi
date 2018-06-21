@@ -20,14 +20,14 @@ Once the program is ready, simply follow a step-by-step guide shown below.
 <br>
 
 
-![](C:/RasberryPi_CarVi/githubIMG/bup_1.png?raw=true)
-![](C:/RasberryPi_CarVi/githubIMG/bup_1.png "bup_1")
+![](../RasberryPi_CarVi/githubIMG/bup_1.png?raw=true)
+![](../RasberryPi_CarVi/githubIMG/bup_1.png "bup_1")
 
 ![](RaspberryPi/IMG/bup_1.PNG)
 
 
 <p float="left">
-  <img src="C:/RasberryPi_CarVi/githubIMG/bup_1.png" width="100" />
+  <img src="../RasberryPi_CarVi/githubIMG/bup_1.png" width="100" />
 </p>
 
 
