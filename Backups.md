@@ -1,5 +1,6 @@
 # Backup Raspberry Pi
 <br>
+
 ## 1. Home folder  
 You can keep _RPi home folder_ by using the following command. This creates a tar archive and you keep a copy of it on our home PC or in cloud storage. The following commands will create `pi_home.tar.gz` in `/home/`.
 ```
@@ -12,13 +13,13 @@ sudo tar czf pi_home.tar.gz pi
 ## 2. SD card  
 (Note that this option is written for Windows based computer or linux computers.)  
 
-2-1. Install 'Win32Disklmager'  
+### 2-1. Install 'Win32Disklmager'  
 We can simply backup the SD card from your Raspberry Pi. __'Win32DiskImager'__ is the program that can read the image and write it back to the SD card. Download the program and extract it on your computer. [(Download)](https://sourceforge.net/projects/win32diskimager/)  
 
 Once the program is ready, simply follow a step-by-step guide shown below.  
 <br>
 
-2-2. Backup Raspberry Pi  
+### 2-2. Backup Raspberry Pi  
 To backup your Raspberry Pi, you need __the SD card from the Raspberry Pi__ and the __Windows computer with a SD card reader__.  
 
 > __STEPS__  
@@ -34,7 +35,7 @@ To backup your Raspberry Pi, you need __the SD card from the Raspberry Pi__ and 
 <br>
 
 
-2-3. Restore Raspberry Pi  
+### 2-3. Restore Raspberry Pi  
 To restore a SD card backup, you need __a SD card__ and __'Win32Disklmager' program__. Follow the steps below.
 
 > __STEPS__  
