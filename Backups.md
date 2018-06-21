@@ -20,18 +20,6 @@ Once the program is ready, simply follow a step-by-step guide shown below.
 <br>
 
 
-![](../RasberryPi_CarVi/githubIMG/bup_1.png?raw=true)
-![](../RasberryPi_CarVi/githubIMG/bup_1.png "bup_1")
-
-![](RaspberryPi/IMG/bup_1.PNG)
-
-
-<p float="left">
-  <img src="../RasberryPi_CarVi/githubIMG/bup_1.png" width="100" />
-</p>
-
-
-
 ### 2-2. Backup Raspberry Pi  
 To backup your Raspberry Pi, you need __the SD card from the Raspberry Pi__ and the __Windows computer with a SD card reader__.  
 
@@ -43,6 +31,7 @@ To backup your Raspberry Pi, you need __the SD card from the Raspberry Pi__ and 
 >*(Make sure you select the right drive that is being backed up.)*  
 >4. Press the folder button and locate the folder where to put your backup.  
 >5. Once you are in the right folder, write the name of your backup and press "Open".  
+>![a relative link](/IMG/bup_1.PNG)
 >6. Press "Read" to read the SD card into the image file. This process will take a few minutes.  
 >*(__Do not click "Write"__ since it will __overwrite your SD card.__)*   
 <br>
