@@ -38,8 +38,12 @@ To backup your Raspberry Pi, you need __the SD card from the Raspberry Pi__ and 
 <br>
 
 
-<img src="https://github.com/EllieDJeon/RaspberryPi/IMG/bup_1.PNG" width="48">
+
+
 ![](https://github.com/EllieDJeon/RaspberryPi/IMG/bup_1.PNG)
+
+
+
 
 ### 2-3. Restore Raspberry Pi  
 To restore a SD card backup, you need __a SD card__ and __'Win32Disklmager' program__. Follow the steps below.
