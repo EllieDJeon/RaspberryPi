@@ -6,6 +6,7 @@ cd /home/
 sudo tar czf pi_home.tar.gz pi
 ```
 
+
 ## 2. SD card  
 (Note that this option is written for Windows based computer or linux computers.)  
 
@@ -34,10 +35,12 @@ To restore a SD card backup, you need __a SD card__ and __'Win32Disklmager' prog
 
 > __STEPS__  
 > 
-1. Plug-in your SD card into the computer.  
-2. Start the 'Win32Disklmager' program.  
-3. Press the folder under "Image file" and select your backup image.  
-4. Select the drive of your SD card under "Device".  
-(*Make sure you select __the right drive that is your SD card.__*)
-5.  Press "Write" and wait while the program restores the backup on your SD card. Once the process is done, unplug the SD card and plug it into the Raspberry Pi.
+>1. Plug-in your SD card into the computer.  
+>2. Start the 'Win32Disklmager' program.  
+>3. Press the folder under "Image file" and select your backup image.  
+>4. Select the drive of your SD card under "Device".  
+>(*Make sure you select __the right drive that is your SD card.__*)
+>5.  Press "Write" and wait while the program restores the backup on your SD card. Once the process is done, unplug the SD card and plug it into the Raspberry Pi.
+
+
 
