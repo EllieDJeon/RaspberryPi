@@ -48,13 +48,14 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
  
  Point 'gpsd' to the USB device.  
  ```
- sudo killall gpsd 
+ sudo killall gpsd
  sudo cat /dev/ttyUSB0
  sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock  
   ```  
   
-  Run `cgps` to test. 
-  You can also check that the data is following in the console with `sudo cat /dev/ttyUSB0`.
+  Run `cgps` to test.
+  You can check the lists with `sudo cat /dev/ttyUSB0`.
+  
 
 
 
@@ -64,6 +65,8 @@ sudo pip3 install gps3
 sudo apt-get install python3-microstacknode  
 sudo apt-get install python3-serial  
 ```  
+More info about NMEA Syntax GPS: http://aprs.gids.nl/nmea/#rmc
+
 
 
  
