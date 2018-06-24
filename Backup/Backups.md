@@ -69,6 +69,12 @@ sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update  
 sudo apt-get install grive  
 ```
+
+sudo apt-get install git cmake build-essential libgcrypt11-dev libyajl-dev libboost-all-dev libcurl4-openssl-dev libexpat1-dev libcppunit-dev binutils-dev pkg-config zlib1g-dev
+
+
+
+
   
 Once the installation is done, you need to create a directory to connect to Google Drive. 
 
