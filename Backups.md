@@ -78,6 +78,7 @@ cd ~/googleDrive
 ```  
 
 The following command will give you a link. You can copy and paste the link into the browser and DO NOT close the command window). This process is for asking permission to connect to the Google Drive account. Click allow and copy the code to the command window and the sync will start.  
+`grive -a`  
 
 
 ### 3-2. Upload the file  
