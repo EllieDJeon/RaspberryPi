@@ -57,14 +57,29 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
   You can check the lists with `sudo cat /dev/ttyUSB0`.
   
 
-
-
-## 3. Python Code  
+## 3. GPS Data Overview and Python Code  
 ```  
 sudo pip3 install gps3  
 sudo apt-get install python3-microstacknode  
 sudo apt-get install python3-serial  
 ```  
+
+### '$GPxxx' sentence codes and descriptions  
+$GPRMC  ... Time, Navigate warning, Latitude, Longitude
+$GPHDT ... 'Heading'  
+$GPVTG  ... 'Speed(km/h)', 'Speed(miles/h)'  
+$GPGGA  ... 'Altitude'  
+
+
+> __Note__  
+> Format of latitudes and longitudes  
+> eg. 4533.35 is 45 degrees and 33.35minutes. '.35' of a minute is 21 seconds.  
+
+
+
+
+
+
 More info about NMEA Syntax GPS: http://aprs.gids.nl/nmea/#rmc
 
 
