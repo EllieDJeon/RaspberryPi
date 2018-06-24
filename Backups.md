@@ -59,4 +59,35 @@ To restore a SD card backup, you need __a SD card__ and __'Win32Disklmager' prog
 <br>
 
 
+## 3. Google Drive  
+### 3-1. Install 'grive'  
+
+'Grive' app can be installed by following commend:   
+
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8  
+sudo apt-get update  
+sudo apt-get install grive  
+```
+  
+Once the installation is done, you need to create a directory to connect to Google Drive. 
+
+```
+mkdir ~/googleDrive  
+cd ~/googleDrive  
+```  
+
+The following command will give you a link. You can copy and paste the link into the browser and DO NOT close the command window). This process is for asking permission to connect to the Google Drive account. Click allow and copy the code to the command window and the sync will start.  
+
+
+### 3-2. Upload the file  
+After finishing previous steps, do the following to sync the folder(directory) with the Google Drive account.  
+
+> __STEPS__  
+> 
+>1. Open the command window.  
+>2. Locate into the sync'd Google Drive folder.  
+>3. Run `grive`.  
+
+
 
