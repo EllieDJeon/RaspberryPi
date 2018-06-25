@@ -44,16 +44,16 @@ parser.add_argument("-id", "--clientId", action="store", dest="clientId", defaul
 parser.add_argument("-t", "--topic", action="store", dest="topic", default="sdk/test/Python", help="Targeted topic")
 parser.add_argument("-m", "--mode", action="store", dest="mode", default="both",
                     help="Operation modes: %s"%str(AllowedActions))
-parser.add_argument("-M", "--message", action="store", dest="message", default="NO Message",
+parser.add_argument("-M", "--message", action="store", dest="message", default="Hello World!",
                     help="Message to publish")
 
-parser.add_argument("-A", "--accelerometer", action="store_true", dest="accelerometerOn", default=True, help="accel_enabled")
-parser.add_argument('-G','--gyroscope', action='store_true', dest="gyroscopeOn", default=True, help="gyro_enabled")
-parser.add_argument('-Ma','--magnetometer', action='store_true', dest="magnetometerOn", default=True, help="compass_enabled")
+parser.add_argument("-A", "--accelerometer", action="store_true", default=False)
+parser.add_argument('-G','--gyroscope', action='store_true', default=False)
+parser.add_argument('-Ma','--magnetometer', action='store_true', default=False)
 
-parser.add_argument("-P", "--airpressure", action="store_true", dest="", default=True, help="")
-parser.add_argument("-T", "--temperature", action="store_true", dest="", default=True, help="")
-parser.add_argument('-H','--humidity', action='store_true', dest="", default=True, help="")
+parser.add_argument("-P", "--airpressure", action="store_true", default=False)
+parser.add_argument("-T", "--temperature", action="store_true", default=False)
+parser.add_argument('-H','--humidity', action='store_true', default=False)
 
 args = parser.parse_args()
 host = args.host
@@ -63,13 +63,6 @@ privateKeyPath = args.privateKeyPath
 useWebsocket = args.useWebsocket
 clientId = args.clientId
 topic = args.topic
-
-accelerometerOn = args.accelerometerOn
-gyroscopeOn = args.gyroscopeOn
-magnetometerOn = args.magnetometerOn
-
-
-#if accelerometerOn: 
 
 if args.mode not in AllowedActions:
     parser.error("Unknown --mode option %s. Must be one of %s" % (args.mode, str(AllowedActions)))
@@ -124,14 +117,10 @@ sense.clear()
 # Publish to the same topic in a loop forever
 while True:
     if args.mode == 'both' or args.mode == 'publish':
-
-    	##setIMU = 
-
-    	sense.set_imu_config(accelerometerOn, gyroscopeOn, magnetometerOn)  # Sensor turnOn/Off (Boolean)
         
-        pitch, roll, yaw = sense.get_gyroscope().values()
-        ax, ay, az = sense.get_accelerometer().values()
-        mx, my, mz = sense.get_compass().values()
+        pitch, roll, yaw = sense.get_orientation().values()
+        ax, ay, az = sense.get_accelerometer_raw().values()
+        mx, my, mz = sense.get_compass_raw().values()
         
         pressure = sense.get_pressure()
         temp = sense.get_temperature()
