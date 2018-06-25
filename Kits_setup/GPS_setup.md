@@ -9,11 +9,13 @@
 
 ### GPS using USB to TTL
 Attach the wires from the USB to TLL cable to the GPS breakout:  
-> Cable  GPS breakout  
-> Red to VCC  
-> Black to GND  
-> Green to RX  
-> White to TX  
+
+| Cable | GPS breakout |   
+|:-----------:|:-----------:|  
+| Red | VCC |  
+| Black | GND |  
+| Green | RX |  
+| White | TX |  
 
 Once the cable is ready, insert the USB part of the cable into the RPi3. 
 
@@ -65,10 +67,18 @@ sudo apt-get install python3-serial
 ```  
 
 ### '$GPxxx' sentence codes and descriptions  
-$GPRMC  ... Time, Navigate warning, Latitude, Longitude
-$GPHDT ... 'Heading'  
-$GPVTG  ... 'Speed(km/h)', 'Speed(miles/h)'  
-$GPGGA  ... 'Altitude'  
+
+| NMEA | DATA |   
+|:-----------:|:-----------|  
+| $GPRMC | Time, Navigate warning, Latitude, Longitude, Speed(miles/h) |  
+| $GPHDT | Heading |  
+| $GPVTG | Speed(km/h), Speed(miles/h) |  
+| $GPGGA | Altitude |  
+
+$GPRMC  ... Time, Navigate warning, Latitude, Longitude, Speed(miles/)  
+$GPHDT ... Heading  
+$GPVTG  ... Speed(km/h), Speed(miles/h)  
+$GPGGA  ... Altitude  
 
 
 > __Note__  
