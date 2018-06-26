@@ -23,7 +23,8 @@ Once the cable is ready, insert the USB part of the cable into the RPi3.
 ## 2. Set GPS on RPi3 
 
 ### Installing gpsd (GPS daemon)  
-'gpsd' is a service deamon that monitors CPS or AIS receivers attached to a host computer through serial or USB ports. For the more information: http://catb.org/gpsd/.  
+'gpsd' is a service deamon that monitors CPS or AIS receivers attached to a host computer through serial or USB ports.  
+ For the more information: http://catb.org/gpsd/.  
 
 Install 'gpsd' and disable the gpsd systemd service.  
 ```
@@ -55,8 +56,13 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
  sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock  
   ```  
   
-  Run `cgps` to test.
-  You can check the lists with `sudo cat /dev/ttyUSB0`.
+  You can check the lists with `sudo cat /dev/ttyUSB0`.  
+  Run `cgps` to test.  
+  <br>  
+  
+![](https://github.com/EllieDJeon/RaspberryPi/IMG/gps_1.PNG)
+
+  
   
 
 ## 3. GPS Data Overview and Python Code  
@@ -67,7 +73,7 @@ sudo apt-get install python3-serial
 ```  
 
 ### '$GPxxx' sentence codes and descriptions  
-
+We are using following sentence codes and GPS data:  
 | NMEA | DATA |   
 |:-----------:|:-----------|  
 | $GPRMC | Time, Navigate warning, Latitude, Longitude, Speed(miles/h) |  
@@ -75,19 +81,10 @@ sudo apt-get install python3-serial
 | $GPVTG | Speed(km/h), Speed(miles/h) |  
 | $GPGGA | Altitude |  
 
-$GPRMC  ... Time, Navigate warning, Latitude, Longitude, Speed(miles/)  
-$GPHDT ... Heading  
-$GPVTG  ... Speed(km/h), Speed(miles/h)  
-$GPGGA  ... Altitude  
-
 
 > __Note__  
 > Format of latitudes and longitudes  
 > eg. 4533.35 is 45 degrees and 33.35minutes. '.35' of a minute is 21 seconds.  
-
-
-
-
 
 
 More info about NMEA Syntax GPS: http://aprs.gids.nl/nmea/#rmc
