@@ -48,7 +48,7 @@ The gpsd needs to be started and pointed at the USB device (or UART).
 USB to TLL use `sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock`  
 UART use `sudo gpsd /dev/ttyS0 -F /var/run/gpsd.sock`  
 
-<br>
+
 ### Checking USB and testing 'gpsd'  
 We should select which USB is going to be used by the GPS.  
 Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ typically.):  
@@ -73,14 +73,14 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
 
 
 
-<br>
 ## 3. GPS Data Overview and Python Code  
 ```  
 sudo pip3 install gps3  
 sudo apt-get install python3-microstacknode  
 sudo apt-get install python3-serial  
 ```  
-<br>
+
+
 ### '$GPxxx' sentence codes and descriptions  
 We are using following sentence codes and GPS data:   
 
