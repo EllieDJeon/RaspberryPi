@@ -1,5 +1,12 @@
 # GPS on Raspberry Pi 3  
 
+## Contents  
+>### 1. Set parts  
+>### 2. Set GPS on RPi3 
+>### 3. GPS Data Overview and Python Code  
+<br>
+
+
 ## 1. Set parts  
 
 ### Parts List  
@@ -18,6 +25,7 @@ Attach the wires from the USB to TLL cable to the GPS breakout:
 | White | TX |  
 
 Once the cable is ready, insert the USB part of the cable into the RPi3. 
+<br>
 
  
 ## 2. Set GPS on RPi3 
@@ -40,7 +48,7 @@ The gpsd needs to be started and pointed at the USB device (or UART).
 USB to TLL use `sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock`  
 UART use `sudo gpsd /dev/ttyS0 -F /var/run/gpsd.sock`  
 
-
+<br>
 ### Checking USB and testing 'gpsd'  
 We should select which USB is going to be used by the GPS.  
 Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ typically.):  
@@ -58,22 +66,24 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
   
   You can check the lists with `sudo cat /dev/ttyUSB0`.  
   Run `cgps` to test.  
-  <br>  
   
-![](https://github.com/EllieDJeon/RaspberryPi/IMG/gps_1.PNG)
+  
+  
+![](https://github.com/EllieDJeon/RaspberryPi/IMG/gps_1.PNG)  
 
-  
-  
 
+
+<br>
 ## 3. GPS Data Overview and Python Code  
 ```  
 sudo pip3 install gps3  
 sudo apt-get install python3-microstacknode  
 sudo apt-get install python3-serial  
 ```  
-
+<br>
 ### '$GPxxx' sentence codes and descriptions  
-We are using following sentence codes and GPS data:  
+We are using following sentence codes and GPS data:   
+
 | NMEA | DATA |   
 |:-----------:|:-----------|  
 | $GPRMC | Time, Navigate warning, Latitude, Longitude, Speed(miles/h) |  
