@@ -65,7 +65,7 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
   ```  
   
   You can check the lists with `sudo cat /dev/ttyUSB0`.  
-  Run `cgps` to test.  
+  Run `cgps` or `gpsmon` to test and monitor a live-streaming update of GPS data.  
   
   
   
