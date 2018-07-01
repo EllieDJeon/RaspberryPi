@@ -72,6 +72,15 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
 ![](https://github.com/EllieDJeon/RaspberryPi/IMG/gps_1.PNG)  
 
 
+> __Note__  
+> If `cgps` does not work, repeat the commands below:
+> ```
+> sudo systemctl stop gpsd.socket  
+> sudo systemctl disable gpsd.socket
+> ```  
+> then run `sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock`.  
+> now rerun `cgps`.    
+
 
 ## 3. GPS Data Overview and Python Code  
 ```  
