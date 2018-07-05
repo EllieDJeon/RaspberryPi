@@ -69,7 +69,7 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
   
   
   
-![](https://github.com/EllieDJeon/RaspberryPi/IMG/gps_1.PNG)  
+![ ](https://github.com/EllieDJeon/RaspberryPi/IMG/gps_1.PNG)  
 
 
 > __Note__  
@@ -82,11 +82,19 @@ Following command lists the conndected USB devices (You will see _/dev/ttyUSB0_ 
 > now rerun `cgps`.    
 
 
-## 3. GPS Data Overview and Python Code  
+## 3. GPS Data Overview and Python Code (gps3, pynmea2)  
+
+* gps3  
 ```  
 sudo pip3 install gps3  
 sudo apt-get install python3-microstacknode  
 sudo apt-get install python3-serial  
+```  
+
+* [pynmea2](https://github.com/Knio/pynmea2/blob/master/README.md)  
+The NMEASentence object has different properties, depending on its sentence type. pynmea2 is a python library for the NMEA 0183 protocol. `parse(data)` will read individual NMEA sentences which start with '$'.   
+```  
+pip install pynmea2  
 ```  
 
 
@@ -101,13 +109,22 @@ We are using following sentence codes and GPS data:
 | $GPGGA | Altitude |  
 
 
-> __Note__  
-> Format of latitudes and longitudes  
-> eg. 4533.35 is 45 degrees and 33.35minutes. '.35' of a minute is 21 seconds.  
-
+example:  
+```  
+>>> import serial  
+>>> import pynmea2  
+>>> gps = serial.Serial("/dev/ttyUSB0", baudrate = 9600, timeout=10000)  
+>>> gpsLine = gps.readline() # read the gps line  
+>>> gpsLine  
+"$GPGGA,184353.07,1929.045,S,02410.506,E,1,04,2.6,100.00,M,-33.9,M,,0000*6D"  
+>>> gpsData = pynmea2.parse(gpsLine)  
+>>> gpsData  
+<GGA(timestamp=datetime.time(18, 43, 53), lat='1929.045', lat_dir='S', lon='02410.506', lon_dir='E', gps_qual='1', num_sats='04', horizontal_dil='2.6', altitude=100.0, altitude_units='M', geo_sep='-33.9', geo_sep_units='M', age_gps_data='', ref_station_id='0000')>  
+>>>  gpsData.lon  
+'02410.506'  
+```
 
 More info about NMEA Syntax GPS: http://aprs.gids.nl/nmea/#rmc
-
 
 
  
