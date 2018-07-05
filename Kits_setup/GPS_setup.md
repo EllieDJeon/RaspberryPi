@@ -107,10 +107,10 @@ We are using following sentence codes and GPS data:
 | $GPHDT | Heading |  
 | $GPVTG | Speed(km/h), Speed(miles/h) |  
 | $GPGGA | Altitude |  
-
+<br>
 
 example:  
-```  
+```python  
 >>> import serial  
 >>> import pynmea2  
 >>> gps = serial.Serial("/dev/ttyUSB0", baudrate = 9600, timeout=10000)  
