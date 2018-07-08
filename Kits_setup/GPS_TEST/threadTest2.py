@@ -18,6 +18,7 @@ import threading
 import time
 import queue
 
+'''
 sensor_gx = []
 sensor_gy = []
 sensor_gz = []       
@@ -27,7 +28,8 @@ sensor_az = []
 sensor_mx = []
 sensor_my = []
 sensor_mz = []
-
+'''
+msg['gx'], msg['gy'], msg['gz'], msg['ax'], msg['ay'], msg['az'], msg['mx'], msg['my'],msg['mz'] = ([] for i in range(9))
 '''-------------------------- Define functions --------------------------'''
 
 def TimeStamp(timeZone = 'America/Chicago'):
@@ -45,10 +47,11 @@ def KeyInfo(camID='raspberry'):
 
 
 def SensorData(stopEvent, timeFinish, arg, q):
+        '''
         global sensor_gx,sensor_gy, sensor_gz
         global sensor_ax, sensor_ay, sensor_az
         global sensor_mx, sensor_my, sensor_mz
-        
+        '''
         while not stopEvent.is_set():
                 while time.time() < timeFinish:
                         # assign the sensor data (Gyroscope, Accelermeter,and Magnetometer) 
@@ -56,29 +59,26 @@ def SensorData(stopEvent, timeFinish, arg, q):
                         ax, ay, az = sense.get_accelerometer_raw().values()
                         mx, my, mz = sense.get_compass_raw().values()
         
-                        sensor_gx.append(pitch)
-                        sensor_gy.append(roll)
-                        sensor_gz.append(yaw)
-                        sensor_ax.append(ax)
-                        sensor_ay.append(ay)
-                        sensor_az.append(az) 
-                        sensor_mx.append(mx)
-                        sensor_my.append(my)
-                        sensor_mz.append(mz)
-                        
+                        msg['gx'].append(pitch)
+                        msg['gy'].append(roll)
+                        msg['gz'].append(yaw)
+                        msg['ax'].append(ax)
+                        msg['ay'].append(ay)
+                        msg['az'].append(az) 
+                        msg['mx'].append(mx)
+                        msg['my'].append(my)
+                        msg['mz'].append(mz)
+                        q.put(msg)
                         if stopEvent.is_set():
                                 print("stop events accur: break 'sensor' ")
                                 break
                         if time.time() > timeFinish:
                                 print("time limit exceeded")
                                 stopEvent.set()
-
                 print("STOP: Stopping as you wish.")
                                 
                 
 def GPSReader(line):
-
-        
         # assign the GPS data
         if line.find('RMC') > 0:
                 data = pynmea2.parse(line)
@@ -97,11 +97,8 @@ def GPSReader(line):
         if line.find('GSV') > 0:
                 data = pynmea2.parse(line)
                 message['heading'] = data.azimuth_1
-                #print('GPGSV_line : ', data) # check the gps data line
-        print("setting stopEvent on gps")
-        
+                #print('GPGSV_line : ', data) # check the gps data line     
         return message
-
 
 
 basicInfo = KeyInfo('raspberry1') # save key information
@@ -124,7 +121,7 @@ while True:
         # check if the line start with '$GPRMC'. This is the first line of the gps data.
         if line.find('RMC') is -1 : line = gps.readline()
         else:
-                msg = {}
+                #msg = {}
                 stopEvent = threading.Event()
                 timeFinish = time.time() + 99
                 stopEvent.clear
@@ -136,8 +133,11 @@ while True:
                         t.result_queue = q 
                         message.update(GPSReader(line)) # add gps data to message
                         line = gps.readline() # read next gps line
-                        if len(message) == 8 : break # break if the message is full
-
+                        if len(message) == 8 : 
+                                print("setting stopEvent on gps")
+                                stopEvent.set()
+                                break # break if the message is full
+                                
                 # Button
                 message['emergencyCall'] = ButtonData()
                 message.update(SensorData())
