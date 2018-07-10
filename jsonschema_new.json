@@ -1,0 +1,98 @@
+{"required":["camera_id", "ax", "ay", "az", "gx", "gy", "gz", "mx", "my", "mz",
+                      "location", "satellites", "speed", "time_stamp", "altitude", "trip_start",
+                      "distance", "emergencyCall", "gps_qual"],
+            "type": "object",
+
+            "properties": {
+                "ax":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+                    }
+                },
+                "ay":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+
+                    }
+                },
+                "az":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+
+                    }
+                },
+                "gx":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+                    }
+                },
+                "gy":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+
+                    }
+                },
+                "gz":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+
+                    }
+                },
+                "mx":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+                    }
+                },
+                "my":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+
+                    }
+                },
+                "mz":{
+                    "type": "array",
+                    "itmes":{
+                        "type": "number"
+
+                    }
+                },
+                "location":{
+                    "type": "string",
+                },
+                "satellites":{
+                    "type": "string",
+                },
+                "speed":{
+                    "type": "number",
+                },
+                "time_stamp":{
+                    "type": "string",
+                },
+                "altitude":{
+                    "type": "number",
+                },
+                "trip_start":{
+                    "type": "string",
+                },
+                "distance":{
+                    "type": "number",
+                },
+                "emergencyCall":{
+                    "type": "boolean",
+                },
+                "gps_qual":{
+                    "type": "number",
+                }
+            },
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "CarVi Data",
+            "type": "object"
+}
