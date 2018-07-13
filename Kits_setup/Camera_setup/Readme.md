@@ -11,7 +11,7 @@ We can use any standard USB webcam to take pictures and video.
 
 ### Parts List  
 -standard USB webcam  
-
+<br>  
 
 ## 2. Installation  
 We need two python module to take pictures and record video. `fswebcam` will be used for taking and saving pictures and `libav=tools` will be recording the video and saving it on the RPi3.  
@@ -54,7 +54,8 @@ To play the recorded video, run the following command.
 ```  
 omxplayer ~/aws-iot-device-sdk-python/samples/testKits/camera/Rpi_video.avi  
 ```  
-
+<br>  
+<br>  
 
 
 
