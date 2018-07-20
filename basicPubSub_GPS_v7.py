@@ -33,7 +33,7 @@ def customCallback(client, userdata, message):
     print("Received a new message: ")
     print(message.payload)
     print("from topic: ")
-    print(message.topic)
+    print(message.topic) 
     print("--------------\n\n")
 
 def videoCallback(client, userdata, message):
